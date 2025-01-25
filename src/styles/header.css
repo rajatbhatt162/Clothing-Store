@@ -1,0 +1,116 @@
+/* styles/header.css */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+header .brand-name {
+  font-size: 24px; /* 'text-2xl' equivalent */
+  font-weight: bold;
+  color: #333;
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none; /* Hide by default */
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Navigation Styles */
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  font-size: 16px;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: black;
+}
+
+/* Show the nav when the menu is open */
+nav.show {
+  display: flex;
+  flex-direction: column; /* Stack nav links vertically when the menu is open */
+  align-items: center;
+  gap: 16px;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 16px 20px; /* Adjusting padding for smaller screens */
+  }
+
+  .brand-name {
+    font-size: 20px; /* Slightly smaller font for mobile */
+  }
+
+  nav {
+    display: none; /* Hide nav by default on mobile */
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hamburger {
+    display: block; /* Show the hamburger button on mobile */
+    font-size: 30px;
+    color: #333;
+  }
+
+  nav a {
+    font-size: 18px; /* Adjust font size for mobile */
+    padding: 14px 0; /* More padding for a cleaner look */
+  }
+
+  /* Transition to slide in the navigation smoothly */
+  nav.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: transform 0.3s ease-out;
+    transform: translateY(0); /* Ensure nav appears smoothly */
+  }
+
+  nav.hide {
+    transform: translateY(-100%); /* Hide the nav offscreen */
+  }
+
+  /* Make nav items appear with a smooth transition */
+  nav a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+}

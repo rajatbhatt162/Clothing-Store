@@ -1,0 +1,101 @@
+/* Categories.css */
+.categories-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-bottom: 30px;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap; /* Allows the items to wrap on smaller screens */
+}
+
+.category-card {
+  text-align: center;
+  width: 220px; /* Set a fixed width for all category cards */
+  border-radius: 10px; /* Set border radius for the card */
+  box-shadow: 0 4px 8px rgb(21, 13, 56);
+  overflow: hidden; /* Ensures no content is overflowing the rounded corners */
+  transition: transform 0.3s ease-in-out;
+}
+
+.category-card:hover {
+  transform: translateY(-10px); /* Slight hover effect */
+}
+
+.category-card img {
+  width: 100%;
+  height: 200px; /* Make all images the same height */
+  object-fit: cover; /* Ensures images cover the area without distortion */
+  border-radius: 10px; /* Rounded corners for the image */
+}
+
+.category-info {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.category-info h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.category-info p {
+  color: gray;
+  margin-top: 5px;
+}
+
+.view-all-btn {
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 8px rgb(21, 13, 56);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.view-all-btn:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .categories {
+    justify-content: center;
+  }
+
+  .category-card {
+    width: 180px; /* Adjust size for mobile */
+  }
+
+  .view-all-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-card {
+    width: 90%; /* Make the category cards full width on very small screens */
+    margin-bottom: 20px;
+  }
+}
